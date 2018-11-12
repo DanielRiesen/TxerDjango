@@ -1,0 +1,14 @@
+[
+  {
+    "url": "http://localhost:8000/users/2/",
+    "username": "DanielRiesen",
+    "email": "driesen80@gmail.com",
+    "groups": []
+  },
+  {
+    "url": "http://localhost:8000/users/1/",
+    "username": "Daniel",
+    "email": "driesen80@gmail.com",
+    "groups": []
+  }
+]

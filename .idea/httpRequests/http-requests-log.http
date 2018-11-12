@@ -1,0 +1,88 @@
+POST http://localhost:8000/api-token-auth/?username=DanielRiesen&password=wedMay21!
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-02T071121.400.json
+
+###
+
+POST http://localhost:8000/api-token-auth/?username=DanielRiesen&password=wedMay21!
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-02T071110.400.json
+
+###
+
+POST http://localhost:8000/api-token-auth/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-02T071040.400.json
+
+###
+
+POST http://localhost:8000/api-token-auth/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-02T070751.400.json
+
+###
+
+POST http://localhost:8000/api-token-auth
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-02T070629.500.html
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-01T094529.200.json
+
+###
+
+GET http://localhost:8000/users?username=Test&email=dhsfdg@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-01T094452.200.json
+
+###
+
+POST http://localhost:8000/users?username=Test&email=dhsfdg@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-01T094436.500.html
+
+###
+
+POST http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+{     "username": "TEST",     "email": "dgsd@gmail.com",     "groups": [] }
+
+<> 2018-10-01T094354.500.html
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-01T094243.200.json
+
+###
+
+GET http://localhost:8080/users
+Accept: */*
+Cache-Control: no-cache
+
+###
+
