@@ -1,14 +1,39 @@
 from django.db import models
 from Txer.models import UserProfile
 import random
+import string
 from rest_framework.authtoken.models import Token
+
+
+def id_gen(size=6, chars=string.ascii_uppercase + string.digits):
+    with open('C:\\Users\\Danie\\PycharmProjects\\TxerAPI\\Tutorials\Shortcuts\\used.txt', "r") as myfile:
+        in_use = myfile.read().split(',')
+    cur = "".join(random.choice(chars) for _ in range(size))
+    while cur in in_use:
+        cur = "".join(random.choice(chars) for _ in range(size))
+    with open('C:\\Users\\Danie\\PycharmProjects\\TxerAPI\\Tutorials\Shortcuts\\used.txt', "a") as myfile:
+        myfile.write(", "+cur)
+    return cur
+
+
+class School(models.Model):
+    name = models.CharField(max_length=40, blank=True, null=True)
+    uuid = models.CharField(primary_key=True, default=id_gen(), max_length=6)
+    teacher_code = models.CharField(default=id_gen(), max_length=6)
+    location = models.CharField(max_length=100, blank=True, null=True)
+    teachers = models.ManyToManyField(UserProfile, related_name='School_Teachers')
+    students = models.ManyToManyField(UserProfile, related_name='School_Students')
 
 
 class Classes(models.Model):
     teacher = models.ManyToManyField(UserProfile, related_name='Class_Teacher')
+    teacher_name = models.CharField(default="Not Set", max_length=100)
+    class_id = models.CharField(blank=True, null=True, max_length=100)
     students = models.ManyToManyField(UserProfile, related_name='Class_Students')
-    class_id = models.CharField(max_length=100, blank=True, null=True)
     archived = models.BooleanField(default=False)
+    url = models.URLField(blank=True, null=True)
+    name = models.CharField(blank=True, null=True, max_length=100)
+    school = models.ManyToManyField(School, related_name="Classes_School")
 
     def __str__(self):
         return 'Class: ' + self.class_id

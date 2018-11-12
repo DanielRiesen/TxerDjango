@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'Tutorials',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'TxerAPI.urls'
@@ -78,6 +81,14 @@ TEMPLATES = [
         },
     },
 ]
+
+
+CORS_ORIGIN_WHITELIST = (
+    'google.com',
+    'hostname.example.com',
+    'localhost:4200',
+    '127.0.0.1:9000'
+)
 
 GOOGLE_OAUTH2_CLIENT_ID = '962650220393-l36o7d6p3s0a5tq4sf0hqrnd2fv2nhkd.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'bdzlfWKksf4O_-qFQL22DhFC'
@@ -137,3 +148,4 @@ STATIC_URL = '/static/'
 DATETIME_FORMAT = [
     '%m/%d/%Y %H:%M:%S',     # '10/25/2006 14:30:59'
 ]
+

@@ -5,7 +5,7 @@ from .models import *
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
+        models = User
         fields = ('username', 'email', 'password')
 
     def create(self, validated_data):
@@ -20,7 +20,16 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
+
 class CredSerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
         model = CredentialModel
-        fields =  ('token', 'refresh_token', 'token_uri', 'client_id', 'client_secret', 'scopes')
+        fields = ('token', 'refresh_token', 'token_uri', 'client_id', 'client_secret', 'scopes')
+
+
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = ('bio', 'username')

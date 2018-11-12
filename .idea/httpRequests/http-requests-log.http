@@ -1,3 +1,101 @@
+GET http://localhost:8000/API/userDetials/
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T081421.200.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T081404.500.txt
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T081250.200.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T081240.403.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080740-1.200.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080740.200.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080711.200.json
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080703.500.txt
+
+###
+
+GET http://localhost:8000/API/userDetials/
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080646.500.txt
+
+###
+
+GET http://localhost:8000/API/userDetials/?token=c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080634.500.txt
+
+###
+
+GET http://localhost:8000/API/userDetials/?token=c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+token: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-25T080616.500.txt
+
+###
+
+POST http://localhost:8000/API/googleAuth/
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-20T114016.500.html
+
+###
+
+POST http://localhost:8000/API/googleAuth
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-20T113959.500.html
+
+###
+
+POST http://localhost:8000/api-token-auth/
+Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+
+<> 2018-10-20T113944.400.json
+
+###
+
 POST http://localhost:8000/api-token-auth/?username=DanielRiesen&password=wedMay21!
 Accept: */*
 Cache-Control: no-cache

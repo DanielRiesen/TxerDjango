@@ -1,10 +1,12 @@
-from ..models import *
+import Tutorials.models as tutorial_models
 from TxerAPI.Shortcuts.shortcuts import *
 from Txer.models import *
+import random
+import string
 
 
-def register_or_update_class(teachers, students, class_id):  # Should be given as list of model instances
-    instance, created = Classes.objects.get_or_create(class_id=class_id)
+def register_or_update_class(teachers, students, class_id, class_url, name):  # Should be given as list of model instances
+    instance, created = tutorial_models.Classes.objects.get_or_create(class_id=class_id)
     instance.teacher.clear()
     instance.students.clear()
     for teacher in teachers:
@@ -12,6 +14,9 @@ def register_or_update_class(teachers, students, class_id):  # Should be given a
     for student in students:
         instance.students.add(student)
     instance.class_id = class_id
+    instance.url = class_url
+    instance.name = name
+    instance.teacher_name = instance.teacher.first().username
     print(instance)
     instance.save()
 

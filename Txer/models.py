@@ -1,16 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
 class UserProfile(models.Model):
+    username = models.CharField(max_length=40, default="Nah")
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = models.ImageField(upload_to='profiles/profile_pictures',
                                       default='/profiles/profile_pictures/default.svg')
     bio = models.CharField(blank=True, null=True, max_length=200)
     student_id = models.CharField(max_length=100, blank=True, null=True)
 
-    def __str__(self):
-        return 'Profile: '+self.user.get_full_name() + ' ' + self.student_id
 
 
 class UserFlow(models.Model):
