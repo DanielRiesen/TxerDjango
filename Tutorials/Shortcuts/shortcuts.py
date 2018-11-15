@@ -1,8 +1,6 @@
 import Tutorials.models as tutorial_models
 from TxerAPI.Shortcuts.shortcuts import *
 from Txer.models import *
-import random
-import string
 
 
 def register_or_update_class(teachers, students, class_id, class_url, name):  # Should be given as list of model instances
@@ -50,10 +48,10 @@ def update_tutorial(**kwargs):
               'November': 11, 'December': 12}
     temp_kwargs = {}
     for key, value in kwargs.items():
-        if key not in ['students', 'teacher', 'Date', 'Start_Time', 'End_Time', 'classes', 'Made']:
+        if key not in ['students', 'teacher', 'Date', 'Start_Time', 'End_Time', 'classes', 'Made', 'am_pm', 'am_pm_end']:
             temp_kwargs[key] = value
-    Tutorial.objects.filter(tutorial_id=kwargs['tutorial_id']).delete()
-    instance, _ = Tutorial.objects.get_or_create(**temp_kwargs)
+    tutorial_models.Tutorial.objects.filter(tutorial_id=kwargs['tutorial_id']).delete()
+    instance, _ = tutorial_models.Tutorial.objects.get_or_create(**temp_kwargs)
     for key, value in kwargs.items():
         if key == 'classes':
             for x in value:
@@ -67,13 +65,34 @@ def update_tutorial(**kwargs):
             for x in value:
                 instance.students.add(x)
         elif key == 'Date':
-            instance.Start_Time = '{}-{}-{} {}:{}'.format(int(kwargs['Date'][2]), months[kwargs['Date'][0]],
-                                                          int(kwargs['Date'][1]),
-                                                          int(kwargs['Start_Time'].split(':')[0]),
-                                                          int(kwargs['Start_Time'].split(':')[1]))
-            instance.End_Time = '{}-{}-{} {}:{}'.format(int(kwargs['Date'][2]), months[kwargs['Date'][0]],
-                                                        int(kwargs['Date'][1]), int(kwargs['End_Time'].split(':')[0]),
-                                                        int(kwargs['End_Time'].split(':')[1]))
+            to_add_start = 0
+            to_add_end = 0
+            if 'am_pm' in kwargs:
+                if kwargs['am_pm'] == 'pm':
+                    to_add_start = 12
+                    if (int(kwargs['Start_Time'].split(':')[0]) + 12) >= 24:
+                        if (int(kwargs['Start_Time'].split(':')[0]) + 12) == 24:
+                            kwargs['Start_Time'] = str(int(kwargs['Start_Time'].split(':')[0])-12) + ":" + str(int(kwargs['Start_Time'].split(':')[1])) + "0"
+                            print("I did it")
+            if 'am_pm_end' in kwargs:
+                if kwargs['am_pm_end'] == 'pm':
+                    to_add_end = 12
+                    if (int(kwargs['End_Time'].split(':')[0]) + 12) >= 24:
+                        if (int(kwargs['End_Time'].split(':')[0]) + 12) == 24:
+                            kwargs['End_Time'] = int(kwargs['End_Time'].split(':')[0])-12 + int(kwargs['End_Time'].split(':')[1])
+            print(kwargs['Start_Time'])
+
+            try:
+                instance.Start_Time = '{}-{}-{} {}:{}'.format(int(kwargs['Date'][2]), months[kwargs['Date'][0]],
+                                                              int(kwargs['Date'][1]),
+                                                              int(kwargs['Start_Time'].split(':')[0])+to_add_start,
+                                                              int(kwargs['Start_Time'].split(':')[1]))
+                instance.End_Time = '{}-{}-{} {}:{}'.format(int(kwargs['Date'][2]), months[kwargs['Date'][0]],
+                                                            int(kwargs['Date'][1]),
+                                                            int(kwargs['End_Time'].split(':')[0])+to_add_end,
+                                                            int(kwargs['End_Time'].split(':')[1]))
+            except:
+                pass
 
     instance.save()
 
@@ -88,8 +107,19 @@ def decode_announcement(announcement):
             announcement_decoded['Date'] = [x.replace(',', '') for x in y if x != 'Date:']
         elif y[0] == 'Start':
             announcement_decoded['Start_Time'] = y[2]
+            try:
+                if y[3]:
+                    announcement_decoded['am_pm'] = y[3]
+            except IndexError:
+                pass
+
         elif y[0] == 'End':
             announcement_decoded['End_Time'] = y[2]
+            try:
+                if y[3]:
+                    announcement_decoded['am_pm_end'] = y[3]
+            except IndexError:
+                pass
         elif y[0] == 'Student':
             announcement_decoded['Joinable'] = True
         elif y[0] == 'Minimum':
@@ -109,26 +139,27 @@ def check_announcements_and_update(requesting_classes_id, requesting_teacher):
     api = build_classroom_api(requesting_teacher)
     for requesting_class in requesting_classes_id:
         for announcement in api.courses().announcements().list(courseId=requesting_class).execute()['announcements']:
+            student_list = []
+            announcement_decoded = decode_announcement(announcement)
             try:
-                student_list = []
-                announcement_decoded = decode_announcement(announcement)
                 if announcement['assigneeMode'] == 'INDIVIDUAL_STUDENTS':
                     for student_idd in announcement['individualStudentsOptions']['studentIds']:
                         try:
                             student_list.append(UserProfile.objects.get(student_id=student_idd))
                         except:
                             pass
-                else:
-                    student_list = Classes.objects.get(class_id=requesting_class).students.all()
-                update_tutorial(
-                    tutorial_id=announcement['id'],
-                    students=student_list,
-                    teacher=UserProfile.objects.filter(user=requesting_teacher.user),
-                    classes=Classes.objects.filter(class_id=requesting_class),
-                    **announcement_decoded
-                )
             except:
+                # You can select zero students in classroom and this throws an error UGH!
                 pass
+            else:
+                student_list = tutorial_models.Classes.objects.get(class_id=requesting_class).students.all()
+            update_tutorial(
+                tutorial_id=announcement['id'],
+                students=student_list,
+                teacher=UserProfile.objects.filter(user=requesting_teacher.user),
+                classes=tutorial_models.Classes.objects.filter(class_id=requesting_class),
+                **announcement_decoded
+            )
 
 
 def create_announcement(requesting_class_id, requesting_teachcer, data):
@@ -175,3 +206,14 @@ def create_announcement(requesting_class_id, requesting_teachcer, data):
     classroom.courses().announcements().create(body={"text": text, "assigneeMode": "INDIVIDUAL_STUDENTS", "individualStudentsOptions": {"studentIds": students}}, courseId=requesting_class_id).execute()
 
     return '200'
+
+
+def update_all_tutorials():
+    errors = 0
+    active_classes = Classes.objects.filter(archived=False)
+    classes_with_cred = {cur: CredentialModel.objects.get(user=cur.teacher.all()[0].user) for cur in active_classes}
+    for cur_class, cred in classes_with_cred.items():
+        check_announcements_and_update([cur_class.class_id], cred)
+        print('check')
+    self.stdout.write(self.style.SUCCESS('Success!'))
+    self.stdout.write(self.style.SUCCESS('Number Of Errors: ' + str(errors)))

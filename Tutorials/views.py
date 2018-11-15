@@ -16,9 +16,10 @@ class Courses(APIView):
     @staticmethod
     def get(request):
         query = Classes.objects.filter(students=UserProfile.objects.get(user=request.user))
+        query |= Classes.objects.filter(teacher=UserProfile.objects.get(user=request.user))
         serilizer_class = Course(query, many=True)
         print(serilizer_class.data)
-        return Response(serilizer_class.dataa)
+        return Response(serilizer_class.data)
 
 
 # View to manage Schools
@@ -56,5 +57,19 @@ class GoogleCourses(APIView):
             name = classroom.courses().get(id=cur_class).execute()['name']
             register_or_update_class(teacher_list, student_list, cur_class, url, name)
         return Response(status=status.HTTP_201_CREATED)
+
+
+class Tutorials(APIView):
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
+    permission_classes = (IsAuthenticated,)
+
+    @staticmethod
+    def get(request):
+        query = Tutorial.objects.filter(students=UserProfile.objects.get(user=request.user))
+        query |= Tutorial.objects.filter(teacher=UserProfile.objects.get(user=request.user))
+        query = query.filter(Start_Time__isnull=False)
+        query = query.order_by('Start_Time')[0:5]
+        serilizer_class = TutorialSer(query, many=True)
+        return Response(status=status.HTTP_202_ACCEPTED, data=serilizer_class.data)
 
 

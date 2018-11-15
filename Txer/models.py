@@ -11,6 +11,8 @@ class UserProfile(models.Model):
     bio = models.CharField(blank=True, null=True, max_length=200)
     student_id = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return self.username
 
 
 class UserFlow(models.Model):

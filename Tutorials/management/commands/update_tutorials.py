@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
 from Tutorials.Shortcuts.shortcuts import *
+from Tutorials.models import *
 
 
 class Command(BaseCommand):

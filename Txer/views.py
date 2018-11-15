@@ -23,7 +23,6 @@ class GoogleAuth(APIView):
         account, created = User.objects.get_or_create(email=idinfo['email'])
         token, created = Token.objects.get_or_create(user=account)
         token = token.key
-        print(token)
         return Response(data={'token': token, 'created': created})
 
 
