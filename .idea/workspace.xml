@@ -1,47 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Txer/serializers.py" line="27" />
+    <bookmark url="file://$PROJECT_DIR$/Txer/serializers.py" line="35" />
     <bookmark url="file://$PROJECT_DIR$/Txer/serializers.py" line="7" />
     <bookmark url="file://$PROJECT_DIR$/Tutorials/views.py" line="11" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4776671e-d632-4be9-8a98-3ff849885926" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-01T094243.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-01T094354.500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-01T094436.500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-01T094452.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-01T094529.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-02T070629.500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-02T070751.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-02T071040.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-02T071110.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-02T071121.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-20T113944.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-20T113959.500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-20T114016.500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080616.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080634.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080646.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080703.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080711.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080740-1.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T080740.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T081240.403.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T081250.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T081404.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-25T081421.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tutorials/Shortcuts/shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/Shortcuts/shortcuts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tutorials/Shortcuts/used.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/Shortcuts/used.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tutorials/management/commands/update_tutorials.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/management/commands/update_tutorials.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tutorials/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tutorials/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tutorials/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tutorials/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tutorials/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Txer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Txer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Txer/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Txer/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Txer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Txer/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv3/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv3/pip-selfcheck.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,8 +62,8 @@
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.84" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -98,7 +72,7 @@
           <entry key="http" value="3" />
           <entry key="json" value="2" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="163" />
+          <entry key="py" value="165" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -107,7 +81,7 @@
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="163" />
+          <entry key="Python" value="165" />
           <entry key="Scratch" value="3" />
           <entry key="UML" value="1" />
         </counts>
@@ -115,14 +89,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="373" />
-          <entry key="py" value="28197" />
-          <entry key="txt" value="58" />
+          <entry key="py" value="28771" />
+          <entry key="txt" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="58" />
-          <entry key="Python" value="28570" />
+          <entry key="PLAIN_TEXT" value="106" />
+          <entry key="Python" value="29144" />
         </counts>
       </usages-collector>
     </session>
@@ -132,53 +106,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tutorials/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="69" column="54" lean-forward="true" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+            <state relative-caret-position="-76">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-                <marker date="1542246745460" expanded="true" signature="2704:2706" ph="..." />
-                <marker date="1542246745460" expanded="true" signature="2704:3179" ph="..." />
+                <marker date="1542379610274" expanded="true" signature="3035:3037" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tutorials/management/commands/update_tutorials.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tutorials/tests.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Txer/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Txer/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Txer/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <marker date="1542380380982" expanded="true" signature="569:673" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Txer/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tutorials/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="33" column="111" selection-start-line="33" selection-start-column="111" selection-end-line="33" selection-end-column="111" />
+            <state relative-caret-position="407">
+              <caret line="32" column="24" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
                 <marker date="1542258622227" expanded="true" signature="332:333" ph="..." />
                 <marker date="1542258622227" expanded="true" signature="454:533" ph="..." />
-                <marker date="1542258622227" expanded="true" signature="580:755" ph="..." />
               </folding>
             </state>
           </provider>
@@ -187,11 +163,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Txer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="161">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1542243231494" expanded="true" signature="644:645" ph="..." />
+                <marker date="1542379733075" expanded="true" signature="555:556" ph="..." />
               </folding>
             </state>
           </provider>
@@ -200,7 +176,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tutorials/Shortcuts/shortcuts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
+            <state relative-caret-position="2116">
               <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -212,11 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tutorials/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="115">
               <caret line="6" column="19" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -224,11 +197,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tutorials/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="55" column="12" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="12" />
+            <state relative-caret-position="131">
+              <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1541961534142" expanded="true" signature="143:663" ph="..." />
+                <marker date="1542378703209" expanded="true" signature="143:663" ph="..." />
               </folding>
             </state>
           </provider>
@@ -237,7 +210,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="12811">
               <caret line="557" selection-start-line="557" selection-end-line="557" />
             </state>
           </provider>
@@ -266,20 +239,17 @@
       <find>THIS</find>
       <find>Start_Time</find>
       <find>THI</find>
-      <find>Start</find>
       <find>s</find>
       <find>print</find>
       <find>try</find>
       <find>update_tutorial</find>
       <find>announcement_decoded</find>
       <find>am_pm</find>
+      <find>Start</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response139.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -292,19 +262,19 @@
         <option value="$PROJECT_DIR$/TxerAPI/settings.py" />
         <option value="$PROJECT_DIR$/Txer/admin.py" />
         <option value="$PROJECT_DIR$/Tutorials/admin.py" />
-        <option value="$PROJECT_DIR$/Txer/serializers.py" />
         <option value="$PROJECT_DIR$/Txer/urls.py" />
         <option value="$PROJECT_DIR$/Tutorials/management/commands/update_classes.py" />
         <option value="$PROJECT_DIR$/Tutorials/Shortcuts/used_uuid.txt" />
         <option value="$PROJECT_DIR$/Tutorials/Shortcuts/used.txt" />
-        <option value="$PROJECT_DIR$/Tutorials/models.py" />
         <option value="$PROJECT_DIR$/Tutorials/management/commands/update_tutorials.py" />
-        <option value="$PROJECT_DIR$/Txer/views.py" />
         <option value="$PROJECT_DIR$/Tutorials/urls.py" />
-        <option value="$PROJECT_DIR$/Txer/models.py" />
-        <option value="$PROJECT_DIR$/Tutorials/views.py" />
         <option value="$PROJECT_DIR$/Tutorials/Shortcuts/shortcuts.py" />
         <option value="$PROJECT_DIR$/Tutorials/serializers.py" />
+        <option value="$PROJECT_DIR$/Tutorials/models.py" />
+        <option value="$PROJECT_DIR$/Tutorials/views.py" />
+        <option value="$PROJECT_DIR$/Txer/models.py" />
+        <option value="$PROJECT_DIR$/Txer/serializers.py" />
+        <option value="$PROJECT_DIR$/Txer/views.py" />
       </list>
     </option>
   </component>
@@ -315,7 +285,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="-986" />
+    <option name="y" value="-4" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -873,6 +844,14 @@
       <option name="presentableId" value="Default" />
       <updated>1538449167259</updated>
     </task>
+    <task id="LOCAL-00001" summary="changed parser added tutorial view">
+      <created>1542259122162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542259122162</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -885,24 +864,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-1928" y="-4" width="1936" height="1066" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2675906" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.27025586" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49840087" weight="0.32939914" />
-      <window_info anchor="bottom" x="820" y="471" width="958" height="493" id="Run" order="2" sideWeight="0.445629" weight="0.3143777" />
+      <window_info anchor="bottom" x="820" y="471" width="958" height="493" id="Run" order="2" sideWeight="0.44509596" visible="true" weight="0.3143777" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.5117271" side_tool="true" visible="true" weight="0.35622317" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.55490404" side_tool="true" visible="true" weight="0.3143777" />
       <window_info anchor="bottom" id="File Transfer" order="10" sideWeight="0.4989339" visible="true" weight="0.32939914" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49733475" weight="0.32936507" />
-      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.48827294" visible="true" weight="0.35622317" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4968017" weight="0.32832617" />
+      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.48827294" weight="0.35622317" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.4989339" weight="0.32939914" />
       <window_info anchor="bottom" id="Python Console" order="14" sideWeight="0.7121535" weight="0.32296136" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -946,6 +925,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed parser added tutorial view" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed parser added tutorial view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,13 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Txer/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TxerAPI/Shortcuts/shortcuts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1148,9 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#102#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1161,45 +1134,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Txer/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorials/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Txer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Txer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1542243231494" expanded="true" signature="644:645" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorials/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api_2.http">
@@ -1209,38 +1144,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorials/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="69" column="54" lean-forward="true" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1542246745460" expanded="true" signature="2704:2706" ph="..." />
-            <marker date="1542246745460" expanded="true" signature="2704:3179" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/management/commands/update_tutorials.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="42" />
+        <state relative-caret-position="253">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="42" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="557" selection-start-line="557" selection-end-line="557" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Tutorials/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/Shortcuts/shortcuts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="2116">
           <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -1248,27 +1167,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorials/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12811">
+          <caret line="557" selection-start-line="557" selection-end-line="557" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="55" column="12" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="12" />
+        <state relative-caret-position="131">
+          <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <marker date="1541961534142" expanded="true" signature="143:663" ph="..." />
+            <marker date="1542378703209" expanded="true" signature="143:663" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tutorials/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="33" column="111" selection-start-line="33" selection-start-column="111" selection-end-line="33" selection-end-column="111" />
+        <state relative-caret-position="407">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
             <marker date="1542258622227" expanded="true" signature="332:333" ph="..." />
             <marker date="1542258622227" expanded="true" signature="454:533" ph="..." />
-            <marker date="1542258622227" expanded="true" signature="580:755" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorials/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1542379610274" expanded="true" signature="3035:3037" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Txer/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <marker date="1542380380982" expanded="true" signature="569:673" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Txer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Txer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1542379733075" expanded="true" signature="555:556" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Txer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
         </state>
       </provider>
     </entry>

@@ -1,186 +1,350 @@
-GET http://localhost:8000/API/userDetials/
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T081421.200.json
-
-###
-
-GET http://localhost:8000/API/userDetials/
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-25T081404.500.txt
+<> 2018-11-14T065227.202.json
 
 ###
 
-GET http://localhost:8000/API/userDetials/
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T081250.200.json
-
-###
-
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-25T081240.403.json
+<> 2018-11-14T065214.202.json
 
 ###
 
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T080740-1.200.json
-
-###
-
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-25T080740.200.json
+<> 2018-11-14T065205.202.json
 
 ###
 
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T080711.200.json
-
-###
-
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-25T080703.500.txt
+<> 2018-11-14T065112.202.json
 
 ###
 
-GET http://localhost:8000/API/userDetials/
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T080646.500.txt
-
-###
-
-GET http://localhost:8000/API/userDetials/?token=c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-Authorization: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-25T080634.500.txt
+<> 2018-11-14T065047.202.json
 
 ###
 
-GET http://localhost:8000/API/userDetials/?token=c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-token: c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-25T080616.500.txt
-
-###
-
-POST http://localhost:8000/API/googleAuth/
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-20T114016.500.html
+<> 2018-11-14T064634.202.json
 
 ###
 
-POST http://localhost:8000/API/googleAuth
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-20T113959.500.html
-
-###
-
-POST http://localhost:8000/api-token-auth/
-Authorization: Token c53d8daab07a3628f0a5ad3aa1caabe557340fa0
-
-<> 2018-10-20T113944.400.json
+<> 2018-11-14T064621.500.txt
 
 ###
 
-POST http://localhost:8000/api-token-auth/?username=DanielRiesen&password=wedMay21!
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-02T071121.400.json
-
-###
-
-POST http://localhost:8000/api-token-auth/?username=DanielRiesen&password=wedMay21!
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-10-02T071110.400.json
+<> 2018-11-14T064539.202.json
 
 ###
 
-POST http://localhost:8000/api-token-auth/
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-02T071040.400.json
-
-###
-
-POST http://localhost:8000/api-token-auth/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-10-02T070751.400.json
+<> 2018-11-14T064529.202.json
 
 ###
 
-POST http://localhost:8000/api-token-auth
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-02T070629.500.html
-
-###
-
-GET http://localhost:8000/users
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-10-01T094529.200.json
+<> 2018-11-14T064402.202.json
 
 ###
 
-GET http://localhost:8000/users?username=Test&email=dhsfdg@gmail.com
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-01T094452.200.json
-
-###
-
-POST http://localhost:8000/users?username=Test&email=dhsfdg@gmail.com
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-10-01T094436.500.html
+<> 2018-11-14T064300.202.json
 
 ###
 
-POST http://localhost:8000/users
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-{     "username": "TEST",     "email": "dgsd@gmail.com",     "groups": [] }
-
-<> 2018-10-01T094354.500.html
+<> 2018-11-14T064153.202.json
 
 ###
 
-GET http://localhost:8000/users
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
 
-<> 2018-10-01T094243.200.json
+<> 2018-11-14T064129.202.json
 
 ###
 
-GET http://localhost:8080/users
-Accept: */*
-Cache-Control: no-cache
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T064031.500.txt
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063930.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063817.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063737.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063731.500.txt
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063654.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063607.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063511-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063511.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063439-3.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063439-2.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063439-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063439.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063438.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063432-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063432.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063431-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063431.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063428-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063428.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063425-3.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063425-2.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063425-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063425.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063424-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063424.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063419.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063414.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063413-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063413.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063359.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063358-1.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063358.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063355.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063349.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063247.202.json
+
+###
+
+GET http://localhost:8000/API/tutorials/
+Authorization: Token bc5601b061dbfb32b411c8020ec3412599001d22
+
+<> 2018-11-14T063010.202.json
 
 ###
 

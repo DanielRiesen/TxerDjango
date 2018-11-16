@@ -32,6 +32,7 @@ class Schools(APIView):
 
 
 # View to retrieve google classroom classes and to register them
+# You can only register courses that you own.
 class GoogleCourses(APIView):
     authentication_classes = (SessionAuthentication, TokenAuthentication)
     permission_classes = (IsAuthenticated,)
@@ -40,8 +41,13 @@ class GoogleCourses(APIView):
     def get(request):
         classroom = shortcuts.build_classroom_api(CredentialModel.objects.get(user=request.user))
         courses_listed = classroom.courses().list().execute()
-        print(courses_listed)
-        return Response(data=courses_listed)
+        courses_teaching = {'courses':[]}
+        print(courses_listed['courses'][0]['ownerId'])
+        for x in courses_listed['courses']:
+            if x['ownerId'] == UserProfile.objects.get(user=request.user).student_id:
+                courses_teaching['courses'].append(x)
+        print(courses_teaching)
+        return Response(data=courses_teaching)
 
     @staticmethod
     def post(request):

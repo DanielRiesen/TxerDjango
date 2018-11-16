@@ -6,13 +6,21 @@ from .models import *
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         models = User
-        fields = ('username', 'email', 'password')
+        fields = ('username', 'email')
 
     def create(self, validated_data):
         print(validated_data)
         user = User.objects.create_user(validated_data['username'], validated_data['email'],
                                         validated_data['password'])
         return user
+
+
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        depth = 2
+        model = UserProfile
+        fields = ('username', 'user')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):

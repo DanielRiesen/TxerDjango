@@ -67,8 +67,8 @@ class GetUserInfo(APIView):
 
     @staticmethod
     def get(request):
-
-        serializer_class = UserSerializer(request.user)
+        query = UserProfile.objects.get(user=request.user)
+        serializer_class = ProfileSerializer(query)
         print(serializer_class.data)
         return Response(serializer_class.data)
 

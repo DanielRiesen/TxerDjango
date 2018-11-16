@@ -53,7 +53,7 @@ class Tutorial(models.Model):
     Desc = models.CharField(max_length=500, blank=True, null=True)
     Start_Time = models.DateTimeField(blank=True, null=True)
     End_Time = models.DateTimeField(blank=True, null=True)
-    Location = models.CharField(max_length=100, blank=True, null=True)
+    Location = models.CharField(max_length=100, default="Not Set")
     tutorial_id = models.CharField(max_length=1000, blank=True, null=True)
     attended_students = models.ManyToManyField(UserProfile, related_name='Attended_students')
     tutorial_material = models.FileField(blank=True, null=True)
