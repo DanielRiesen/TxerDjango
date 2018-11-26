@@ -3,6 +3,7 @@ from Txer.models import UserProfile
 import random
 import string
 from rest_framework.authtoken.models import Token
+from recurrence.fields import RecurrenceField
 
 
 def id_gen(size=6, chars=string.ascii_uppercase + string.digits):
@@ -58,6 +59,7 @@ class Tutorial(models.Model):
     attended_students = models.ManyToManyField(UserProfile, related_name='Attended_students')
     tutorial_material = models.FileField(blank=True, null=True)
     archived = models.BooleanField(default=False)
+    recurrences = RecurrenceField(include_dtstart=False, blank=True, null=True)
 
     def __str__(self):
 
