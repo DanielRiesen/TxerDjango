@@ -21,19 +21,19 @@ class School(models.Model):
     name = models.CharField(max_length=40, blank=True, null=True)
     uuid = models.CharField(primary_key=True, default=id_gen(), max_length=6)
     teacher_code = models.CharField(default=id_gen(), max_length=6)
-    location = models.CharField(max_length=100, blank=True, null=True)
+    location = models.CharField(max_length=90, blank=True, null=True)
     teachers = models.ManyToManyField(UserProfile, related_name='School_Teachers')
     students = models.ManyToManyField(UserProfile, related_name='School_Students')
 
 
 class Classes(models.Model):
     teacher = models.ManyToManyField(UserProfile, related_name='Class_Teacher')
-    teacher_name = models.CharField(default="Not Set", max_length=100)
-    class_id = models.CharField(blank=True, null=True, max_length=100)
+    teacher_name = models.CharField(default="Not Set", max_length=90)
+    class_id = models.CharField(blank=True, null=True, max_length=90)
     students = models.ManyToManyField(UserProfile, related_name='Class_Students')
     archived = models.BooleanField(default=False)
     url = models.URLField(blank=True, null=True)
-    name = models.CharField(blank=True, null=True, max_length=100)
+    name = models.CharField(blank=True, null=True, max_length=90)
     school = models.ManyToManyField(School, related_name="Classes_School")
 
     def __str__(self):
@@ -51,15 +51,25 @@ class Tutorial(models.Model):
     MinStudent = models.IntegerField(default=0)
     MaxStudent = models.IntegerField(default=10000)
     Joinable = models.BooleanField(default=False)
-    Desc = models.CharField(max_length=500, blank=True, null=True)
+    Desc = models.CharField(max_length=90, blank=True, null=True)
     Start_Time = models.DateTimeField(blank=True, null=True)
     End_Time = models.DateTimeField(blank=True, null=True)
-    Location = models.CharField(max_length=100, default="Not Set")
-    tutorial_id = models.CharField(max_length=1000, blank=True, null=True)
+    Location = models.CharField(max_length=90, default="Not Set")
+    tutorial_id = models.CharField(max_length=90, blank=True, null=True)
     attended_students = models.ManyToManyField(UserProfile, related_name='Attended_students')
     tutorial_material = models.FileField(blank=True, null=True)
     archived = models.BooleanField(default=False)
-    recurrences = RecurrenceField(include_dtstart=False, blank=True, null=True)
+    repeat_weekly = models.BooleanField(blank=True, null=True)
+    repeat_daily = models.BooleanField(blank=True, null=True)
+    repeat_monday = models.BooleanField(blank=True, null=True)
+    repeat_tuesday = models.BooleanField(blank=True, null=True)
+    repeat_wednesday = models.BooleanField(blank=True, null=True)
+    repeat_thursday = models.BooleanField(blank=True, null=True)
+    repeat_friday = models.BooleanField(blank=True, null=True)
+    repeat_saturday = models.BooleanField(blank=True, null=True)
+    repeat_sunday = models.BooleanField(blank=True, null=True)
+    repeat_start_date = models.DateField(blank=True, null=True)
+    repeat_end_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
 

@@ -100,10 +100,15 @@ WSGI_APPLICATION = 'TxerAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'postgres',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'txerdb.postgres.database.azure.com',
+        'USER': 'daniel@txerdb',
+        'PASSWORD': 'wedMay21!',
+        'PORT': '5432',
     }
 }
 
@@ -132,13 +137,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

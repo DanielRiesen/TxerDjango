@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 
@@ -8,5 +8,5 @@ urlpatterns = [
     path('userDetials/', views.GetUserInfo.as_view(), name='user-details'),
     path('userDefault/', views.GetUserDefault.as_view(), name='user-default'),
     path('profile/', views.Profile.as_view(), name='Profile'),
-
+    path('profilePublic/<str:id>', views.PublicProfile.as_view(), name='Profile-Public'),
 ]

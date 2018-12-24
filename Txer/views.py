@@ -12,6 +12,7 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated
 from Tutorials.models import School
 from TxerAPI.Shortcuts.shortcuts import build_classroom_api
+import random
 
 class GoogleAuth(APIView):
 
@@ -20,7 +21,7 @@ class GoogleAuth(APIView):
 
         idinfo = id_token.verify_oauth2_token(request.data['Zi']['id_token'], requests.Request(), "962650220393-o5upillndnmij30pdsgktb58fnmm3b4o.apps.googleusercontent.com")
         userid = idinfo['sub']
-        account, created = User.objects.get_or_create(email=idinfo['email'])
+        account, created = User.objects.get_or_create(email=idinfo['email'], username="temp"+str(random.randint(0,10000)))
         token, created = Token.objects.get_or_create(user=account)
         token = token.key
         return Response(data={'token': token, 'created': created})
@@ -55,7 +56,6 @@ class GoogleToken(APIView):
         cred.token_uri = credentials.token_uri
         cred.client_id = credentials.client_id
         cred.client_secret = credentials.client_secret
-        cred.scopes = credentials.scopes
         cred.save()
 
         return Response({'token': token, 'created': created}, status=status.HTTP_202_ACCEPTED)
@@ -73,6 +73,16 @@ class GetUserInfo(APIView):
         return Response(serializer_class.data)
 
 
+class PublicProfile(APIView):
+
+    @staticmethod
+    def get(request, id):
+        print(id)
+        query = UserProfile.objects.get(pk=int(id))
+        serializer_class = ProfileSerializer(query)
+        return Response(serializer_class.data)
+
+
 class GetUserDefault(APIView):
 
     @staticmethod
@@ -87,10 +97,16 @@ class Profile(APIView):
     @staticmethod
     def post(request):
         classroom = build_classroom_api(CredentialModel.objects.get(user=request.user))
+        print(classroom)
         profile, created = UserProfile.objects.get_or_create(user=request.user)
         profile.username = request.data['username']
         profile.bio = request.data['desc']
-        profile.student_id = classroom.userProfiles().get(userId='me').execute()['id']
+        google_data = classroom.userProfiles().get(userId='me').execute()
+        profile.profile_image = google_data['photoUrl']
+        print(google_data)
+        profile.student_id = google_data['id']
+        print(request.data)
+        profile.school_code = request.data['school']
         try:
             school = School.objects.get(uuid=request.data['school'])
             school.students.add(profile)
@@ -100,7 +116,9 @@ class Profile(APIView):
                 school = School.objects.get(teacher_code=request.data['school'])
                 school.teachers.add(profile)
                 user_type = "teacher"
+                profile.teacher = True
             except School.DoesNotExist:
+                profile.school_code = ''
                 return Response(status=status.HTTP_400_BAD_REQUEST)
         profile.save()
         school.save()

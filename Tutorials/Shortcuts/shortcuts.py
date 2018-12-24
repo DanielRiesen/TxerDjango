@@ -1,6 +1,10 @@
 import Tutorials.models as tutorial_models
 from TxerAPI.Shortcuts.shortcuts import *
+from Tutorials.management.commands import update_tutorials
 from Txer.models import *
+from django.core.exceptions import ObjectDoesNotExist
+import time
+import threading
 
 
 def register_or_update_class(teachers, students, class_id, class_url, name):  # Should be given as list of model instances
@@ -15,7 +19,6 @@ def register_or_update_class(teachers, students, class_id, class_url, name):  # 
     instance.url = class_url
     instance.name = name
     instance.teacher_name = instance.teacher.first().username
-    print(instance)
     instance.save()
 
 
@@ -50,7 +53,7 @@ def update_tutorial(**kwargs):
     for key, value in kwargs.items():
         if key not in ['students', 'teacher', 'Date', 'Start_Time', 'End_Time', 'classes', 'Made', 'am_pm', 'am_pm_end']:
             temp_kwargs[key] = value
-    tutorial_models.Tutorial.objects.filter(tutorial_id=kwargs['tutorial_id']).delete()
+
     instance, _ = tutorial_models.Tutorial.objects.get_or_create(**temp_kwargs)
     for key, value in kwargs.items():
         if key == 'classes':
@@ -73,15 +76,13 @@ def update_tutorial(**kwargs):
                     if (int(kwargs['Start_Time'].split(':')[0]) + 12) >= 24:
                         if (int(kwargs['Start_Time'].split(':')[0]) + 12) == 24:
                             kwargs['Start_Time'] = str(int(kwargs['Start_Time'].split(':')[0])-12) + ":" + str(int(kwargs['Start_Time'].split(':')[1])) + "0"
-                            print("I did it")
+
             if 'am_pm_end' in kwargs:
                 if kwargs['am_pm_end'] == 'pm':
                     to_add_end = 12
                     if (int(kwargs['End_Time'].split(':')[0]) + 12) >= 24:
                         if (int(kwargs['End_Time'].split(':')[0]) + 12) == 24:
                             kwargs['End_Time'] = int(kwargs['End_Time'].split(':')[0])-12 + int(kwargs['End_Time'].split(':')[1])
-            print(kwargs['Start_Time'])
-
             try:
                 instance.Start_Time = '{}-{}-{} {}:{}'.format(int(kwargs['Date'][2]), months[kwargs['Date'][0]],
                                                               int(kwargs['Date'][1]),
@@ -135,31 +136,55 @@ def decode_announcement(announcement):
     return announcement_decoded
 
 
+class myThread(threading.Thread):
+
+    def __init__(self, threadID, name, announcement, requesting_class, requesting_teacher):
+      threading.Thread.__init__(self)
+      self.threadID = threadID
+      self.name = name
+      self.announcement = announcement
+      self.requesting_class = requesting_class
+      self.requesting_teacher = requesting_teacher
+
+    def run(self):
+
+        student_list = []
+        announcement_decoded = decode_announcement(self.announcement)
+        try:
+            if self.announcement['assigneeMode'] == 'INDIVIDUAL_STUDENTS':
+                for student_idd in self.announcement['individualStudentsOptions']['studentIds']:
+                    try:
+                        student_list.append(UserProfile.objects.get(student_id=student_idd))
+                    except ObjectDoesNotExist:  # Send them an email? Or teacher?
+                        pass
+        except KeyError:
+            student_list = tutorial_models.Classes.objects.get(class_id=self.requesting_class).students.all()
+
+        update_tutorial(
+            tutorial_id=self.announcement['id'],
+            students=student_list,
+            teacher=UserProfile.objects.filter(user=self.requesting_teacher.user),
+            classes=tutorial_models.Classes.objects.filter(class_id=self.requesting_class),
+            **announcement_decoded
+        )
+
+
 def check_announcements_and_update(requesting_classes_id, requesting_teacher):
+
+    threads = []
+
     api = build_classroom_api(requesting_teacher)
+
+    announcements = tutorial_models.Tutorial.objects
+
     for requesting_class in requesting_classes_id:
+
         for announcement in api.courses().announcements().list(courseId=requesting_class).execute()['announcements']:
-            student_list = []
-            announcement_decoded = decode_announcement(announcement)
-            try:
-                if announcement['assigneeMode'] == 'INDIVIDUAL_STUDENTS':
-                    for student_idd in announcement['individualStudentsOptions']['studentIds']:
-                        try:
-                            student_list.append(UserProfile.objects.get(student_id=student_idd))
-                        except:
-                            pass
-            except:
-                # You can select zero students in classroom and this throws an error UGH!
-                pass
-            else:
-                student_list = tutorial_models.Classes.objects.get(class_id=requesting_class).students.all()
-            update_tutorial(
-                tutorial_id=announcement['id'],
-                students=student_list,
-                teacher=UserProfile.objects.filter(user=requesting_teacher.user),
-                classes=tutorial_models.Classes.objects.filter(class_id=requesting_class),
-                **announcement_decoded
-            )
+
+            if announcements.filter(id=announcement['id']).exists() == False:
+                thread = myThread(1, "Thread-Tutorial", announcement, requesting_class, requesting_teacher)
+                thread.start()
+                thread.join()
 
 
 def create_announcement(requesting_class_id, requesting_teachcer, data):
@@ -198,7 +223,7 @@ def create_announcement(requesting_class_id, requesting_teachcer, data):
 
     students = []
 
-    cur_class = Classes.objects.get(class_id=requesting_class_id).students.all()
+    cur_class = tutorial_models.Classes.objects.get(class_id=requesting_class_id).students.all()
     for x in cur_class:
         if x.student_id in data['students']:
             students.append(x.student_id)
@@ -206,14 +231,3 @@ def create_announcement(requesting_class_id, requesting_teachcer, data):
     classroom.courses().announcements().create(body={"text": text, "assigneeMode": "INDIVIDUAL_STUDENTS", "individualStudentsOptions": {"studentIds": students}}, courseId=requesting_class_id).execute()
 
     return '200'
-
-
-def update_all_tutorials():
-    errors = 0
-    active_classes = Classes.objects.filter(archived=False)
-    classes_with_cred = {cur: CredentialModel.objects.get(user=cur.teacher.all()[0].user) for cur in active_classes}
-    for cur_class, cred in classes_with_cred.items():
-        check_announcements_and_update([cur_class.class_id], cred)
-        print('check')
-    self.stdout.write(self.style.SUCCESS('Success!'))
-    self.stdout.write(self.style.SUCCESS('Number Of Errors: ' + str(errors)))

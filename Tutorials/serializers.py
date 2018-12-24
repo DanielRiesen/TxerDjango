@@ -1,15 +1,24 @@
-from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import *
 from Txer.models import *
 
 
-class Course(serializers.HyperlinkedModelSerializer):
+class CourseDetailsSer(serializers.ModelSerializer):
 
     class Meta:
 
+        depth = 2
         model = Classes
-        fields = ('name', 'url', 'teacher_name')
+        fields = ('name', 'url', 'teacher_name', 'url', 'id', 'students')
+
+
+class Course(serializers.ModelSerializer):
+
+    class Meta:
+
+        depth = 2
+        model = Classes
+        fields = ('name', 'url', 'teacher_name', 'id', 'class_id', 'teacher')
 
 
 class SchoolSer(serializers.ModelSerializer):

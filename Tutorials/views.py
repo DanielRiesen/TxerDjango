@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from TxerAPI.Shortcuts import shortcuts
 from .Shortcuts.shortcuts import *
+from datetime import *
 
 
 # View to manage already registered classes in the database
@@ -14,9 +15,36 @@ class Courses(APIView):
     permission_classes = (IsAuthenticated,)
 
     @staticmethod
-    def get(request):
-        query = Classes.objects.filter(students=UserProfile.objects.get(user=request.user))
-        query |= Classes.objects.filter(teacher=UserProfile.objects.get(user=request.user))
+    def get(request, num):
+        query = Classes.objects.filter(students=UserProfile.objects.get(user=request.user))[:int(num)]
+        serilizer_class = Course(query, many=True)
+        print(serilizer_class.data)
+        for x in serilizer_class.data:
+            if len(x['teacher']) > 1:
+                x['teacher'] = x['teacher'][0]
+        return Response(serilizer_class.data)
+
+
+class CourseDetails(APIView):
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
+    permission_classes = (IsAuthenticated,)
+
+    @staticmethod
+    def get(request, id):
+        query = Classes.objects.get(class_id=int(id))
+        print(id)
+        serilizer_class = CourseDetailsSer(query)
+        print(serilizer_class.data)
+        return Response(serilizer_class.data)
+
+
+class TeachingCourses(APIView):
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
+    permission_classes = (IsAuthenticated,)
+
+    @staticmethod
+    def get(request, num):
+        query = Classes.objects.filter(teacher=UserProfile.objects.get(user=request.user))[:int(num)]
         serilizer_class = Course(query, many=True)
         print(serilizer_class.data)
         return Response(serilizer_class.data)
@@ -27,8 +55,14 @@ class Schools(APIView):
 
     @staticmethod
     def post(request):
-        School.objects.get_or_create(**request.data)
-        return Response(status=status.HTTP_201_CREATED)
+        print(request.data)
+        school, created = School.objects.get_or_create(name=request.data['name'], location=request.data['location'])
+        return Response(status=status.HTTP_201_CREATED, data=school.uuid)
+
+    @staticmethod
+    def get(request, uuid):
+        serializer = SchoolSer(query=School.objects.get(uuid=uuid))
+        return Response(status=status.HTTP_202_ACCEPTED, data=serializer.data)
 
 
 # View to retrieve google classroom classes and to register them
@@ -70,12 +104,23 @@ class Tutorials(APIView):
     permission_classes = (IsAuthenticated,)
 
     @staticmethod
-    def get(request):
+    def get(request, num):
         query = Tutorial.objects.filter(students=UserProfile.objects.get(user=request.user))
-        query |= Tutorial.objects.filter(teacher=UserProfile.objects.get(user=request.user))
         query = query.filter(Start_Time__isnull=False)
-        query = query.order_by('Start_Time')[0:5]
+        query = query.order_by('Start_Time')[0:int(num)]
         serilizer_class = TutorialSer(query, many=True)
         return Response(status=status.HTTP_202_ACCEPTED, data=serilizer_class.data)
 
 
+class TeachingTutorials(APIView):
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
+    permission_classes = (IsAuthenticated,)
+
+    @staticmethod
+    def get(request, num):
+        query = Tutorial.objects.filter(teacher=UserProfile.objects.get(user=request.user))
+        query = query.filter(Start_Time__isnull=False)
+        query = query.filter(Start_Time__gte=datetime.now()-timedelta(hours=1))
+        query = query.order_by('Start_Time')[0:int(num)]
+        serilizer_class = TutorialSer(query, many=True)
+        return Response(status=status.HTTP_202_ACCEPTED, data=serilizer_class.data)

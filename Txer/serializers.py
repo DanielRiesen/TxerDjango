@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
 from rest_framework import serializers
 from .models import *
 
@@ -40,4 +40,4 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ('bio', 'username')
+        fields = ('bio', 'username', 'teacher', 'profile_image', 'school_code')
