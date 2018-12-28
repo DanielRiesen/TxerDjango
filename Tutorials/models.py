@@ -3,7 +3,7 @@ from Txer.models import UserProfile
 import random
 import string
 from rest_framework.authtoken.models import Token
-from recurrence.fields import RecurrenceField
+import datetime
 
 
 def id_gen(size=6, chars=string.ascii_uppercase + string.digits):
@@ -35,6 +35,8 @@ class Classes(models.Model):
     url = models.URLField(blank=True, null=True)
     name = models.CharField(blank=True, null=True, max_length=90)
     school = models.ManyToManyField(School, related_name="Classes_School")
+    last_updated = models.DateTimeField(default=datetime.datetime(1000, 1, 1, 1, 1, 1))
+    api_built = models.FileField(upload_to="API_Storage/", blank=True, null=True)
 
     def __str__(self):
         return 'Class: ' + self.class_id

@@ -141,7 +141,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-
+azure_storage_name = "txerstorage"
+azure_storage_key = "UFZzoDddaureYecTSSWPjwkiAt2suGnb5bnHt/11ASZ3J2DkrNbQkaODluHjPPRKvuNk4oBXa+SEnC17NL8HnA=="
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
