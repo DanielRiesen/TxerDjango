@@ -84,12 +84,8 @@ TEMPLATES = [
 ]
 
 
-CORS_ORIGIN_WHITELIST = (
-    'google.com',
-    'hostname.example.com',
-    'localhost:4200',
-    '127.0.0.1:9000'
-)
+CORS_ORIGIN_ALLOW_ALL = DEBUG
+CORS_ALLOW_CREDENTIALS = False
 
 GOOGLE_OAUTH2_CLIENT_ID = '962650220393-l36o7d6p3s0a5tq4sf0hqrnd2fv2nhkd.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'bdzlfWKksf4O_-qFQL22DhFC'

@@ -1,21 +1,17 @@
 import datetime
 import random
 import string
+import os
 
 from django.db import models
 from rest_framework.authtoken.models import Token
 
 from Txer.models import UserProfile
 
+path = os.path.dirname(os.path.realpath(__file__))
 
 def id_gen(size=6, chars=string.ascii_uppercase + string.digits):
-    with open('C:\\Users\\Danie\\PycharmProjects\\TxerAPI\\Tutorials\Shortcuts\\used.txt', "r") as myfile:
-        in_use = myfile.read().split(',')
     cur = "".join(random.choice(chars) for _ in range(size))
-    while cur in in_use:
-        cur = "".join(random.choice(chars) for _ in range(size))
-    with open('C:\\Users\\Danie\\PycharmProjects\\TxerAPI\\Tutorials\Shortcuts\\used.txt', "a") as myfile:
-        myfile.write(", "+cur)
     return cur
 
 

@@ -25,7 +25,7 @@ class GoogleAuth(APIView):
         idinfo = id_token.verify_oauth2_token(request.data['Zi']['id_token'], requests.Request(), "962650220393-o5upillndnmij30pdsgktb58fnmm3b4o.apps.googleusercontent.com")
         userid = idinfo['sub']
         account, created = User.objects.get_or_create(email=idinfo['email'])
-        token, _ = Token.objects.get_or_create(user=account)
+        token, created = Token.objects.get_or_create(user=account)
         token = token.key
         print(created)
         return Response(data={'token': token, 'created': created})
