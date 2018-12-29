@@ -1,9 +1,11 @@
-from django.db import models
-from Txer.models import UserProfile
+import datetime
 import random
 import string
+
+from django.db import models
 from rest_framework.authtoken.models import Token
-import datetime
+
+from Txer.models import UserProfile
 
 
 def id_gen(size=6, chars=string.ascii_uppercase + string.digits):

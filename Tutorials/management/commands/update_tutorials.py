@@ -1,6 +1,8 @@
+from multiprocessing.dummy import Pool as ThreadPool
+
 from django.core.management.base import BaseCommand
+
 from Tutorials.tutorial_updater.Tutorial import *
-import pickle
 
 
 class Command(BaseCommand):
@@ -30,32 +32,18 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        Flag = True
+        start_time = time.time()
+        class_list = list(Classes.objects.all())
+        print(options['full_update'])
+        if options['debug']:
+            print(class_list)
 
-        while Flag:
-            cur = 0
-            threads = []
-            start_time = time.time()
-            while len(Classes.objects.all()) > cur:
-                if cur + options['threads'][0] < len(Classes.objects.all()):
-                    for x in range(options['threads'][0]):
-                        threads.append(
-                            TutorialProcess(Classes.objects.all()[cur + x].class_id, x,
-                                            force_update=options['full_update'], debug=options['debug']))
-                else:
-                    for x in range(len(Classes.objects.all()) - options['threads'][0], len(Classes.objects.all())):
-                        if x < 0:
-                            pass
-                        else:
-                            threads.append(
-                                TutorialProcess(Classes.objects.all()[x].class_id, x,
-                                                force_update=options['full_update'], debug=options['debug']))
-                [thread.start() for thread in threads]
-                print(len(threads))
+        def update_tutorial(classes):
+            TutorialProcess(classes.class_id, classes.class_id, force_update=options['full_update'], debug=options['debug'])
 
-                cur += options['threads'][0]
-            end_time = time.time()
-            if not options['repeat']:
-                Flag = False
-            else:
-                print(end_time - start_time)
+        pool = ThreadPool(int(options['threads'][0]))
+        results = pool.map(update_tutorial, class_list)
+        pool.close()
+        pool.join()
+        if options['debug']:
+            print(time.time()-start_time)

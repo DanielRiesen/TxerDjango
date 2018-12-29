@@ -1,18 +1,21 @@
-from rest_framework.views import APIView
-from .serializers import *
-from rest_framework.response import Response
-from google.oauth2 import id_token
-from google.auth.transport import requests
-from oauth2client import client
-from rest_framework.authtoken.models import Token
-from TxerAPI import settings
 import os
+import random
+
+from google.auth.transport import requests
+from google.oauth2 import id_token
+from oauth2client import client
 from rest_framework import status
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from Tutorials.models import School
+from TxerAPI import settings
 from TxerAPI.Shortcuts.shortcuts import build_classroom_api
-import random
+from .serializers import *
+
 
 class GoogleAuth(APIView):
 
@@ -21,9 +24,10 @@ class GoogleAuth(APIView):
 
         idinfo = id_token.verify_oauth2_token(request.data['Zi']['id_token'], requests.Request(), "962650220393-o5upillndnmij30pdsgktb58fnmm3b4o.apps.googleusercontent.com")
         userid = idinfo['sub']
-        account, created = User.objects.get_or_create(email=idinfo['email'], username="temp"+str(random.randint(0,10000)))
-        token, created = Token.objects.get_or_create(user=account)
+        account, created = User.objects.get_or_create(email=idinfo['email'])
+        token, _ = Token.objects.get_or_create(user=account)
         token = token.key
+        print(created)
         return Response(data={'token': token, 'created': created})
 
 

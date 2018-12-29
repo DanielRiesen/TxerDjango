@@ -1,12 +1,14 @@
-from rest_framework.views import APIView
-from .serializers import *
-from rest_framework.response import Response
+from datetime import *
+
+from rest_framework import status
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from TxerAPI.Shortcuts import shortcuts
 from .Shortcuts.shortcuts import *
-from datetime import *
+from .serializers import *
 
 
 # View to manage already registered classes in the database
@@ -120,7 +122,7 @@ class TeachingTutorials(APIView):
     def get(request, num):
         query = Tutorial.objects.filter(teacher=UserProfile.objects.get(user=request.user))
         query = query.filter(Start_Time__isnull=False)
-        query = query.filter(Start_Time__gte=datetime.now()-timedelta(hours=1))
+        query = query.filter(Start_Time__gte=datetime.datetime.now() - timedelta(hours=1))
         query = query.order_by('Start_Time')[0:int(num)]
         serilizer_class = TutorialSer(query, many=True)
         return Response(status=status.HTTP_202_ACCEPTED, data=serilizer_class.data)

@@ -17,6 +17,7 @@ class TutorialProcess(threading.Thread):
         self.cred_container = "googleapis"
         self.threadID = thread_id
         self.force_update = force_update
+        print(self.force_update)
         self.start_time = time.time()
         self.update_time = datetime.datetime.now()
         self.end_time = time.time()
@@ -51,7 +52,7 @@ class TutorialProcess(threading.Thread):
                                          self.api.courses().announcements().list(courseId=self.class_id).execute()[
                                              'announcements']))
 
-        if len(list(self.announcements)) < 1:
+        if len(list(self.announcements)) < 1 and not self.force_update:
             self.flag = False
         else:
             self.flag = True
@@ -61,6 +62,8 @@ class TutorialProcess(threading.Thread):
             self.class_teachers = [teacher.user for teacher in self.classes.teacher.all()]
             self.query_time = (
                                       time.time() - self.query_time) / 4  # Calc mean query time... Replace 4 with number of query
+
+        self.run()
 
     def __str__(self):
 
@@ -112,6 +115,7 @@ class TutorialProcess(threading.Thread):
         start_time = time.time()
         if self.force_update:
             return True
+
         else:
             data = data['updateTime']
             data = data.split('T')[0] + ' ' + data.split('T')[1]
@@ -128,30 +132,27 @@ class TutorialProcess(threading.Thread):
 
     def run(self):
 
-        if self.flag:
-            if self.debug:
-                print("ANNOUNCEMENTS(S) CAME THROUGH")
-            threads = []
-            self.announcement_start = time.time()
-            for announcement in self.announcements:
-                process = AnnouncementProcess(0, announcement, self.students, self.class_teachers, self.classes)
-                process.run()
-                announcement_processed = process.finished
-                try:
-                    announcement_processed['tutorial_id'] = announcement['id']
-                    self.to_save.append(announcement_processed)
-                except TypeError:
-                    pass
-            self.announcement_end = time.time()
+        if self.debug:
+            print("ANNOUNCEMENTS(S) CAME THROUGH")
+        threads = []
+        self.announcement_start = time.time()
+        for announcement in self.announcements:
+            process = AnnouncementProcess(0, announcement, self.students, self.class_teachers, self.classes)
+            process.run()
+            announcement_processed = process.finished
             try:
-                self.anc_time = (self.announcement_end - self.announcement_start) / len(list(self.announcements))
-            except ZeroDivisionError:
-                self.anc_time = 0
-            self.write_db(self.to_save)
+                announcement_processed['tutorial_id'] = announcement['id']
+                self.to_save.append(announcement_processed)
+            except TypeError:
+                pass
+        self.announcement_end = time.time()
+        try:
+            self.anc_time = (self.announcement_end - self.announcement_start) / len(list(self.announcements))
+        except ZeroDivisionError:
+            self.anc_time = 0
+        self.write_db(self.to_save)
 
         self.end_time = time.time()
-        if not self.flag:
-            self.write_db([])
 
     def handel_error(self, error_name: str, error_code: int, error_desc: str):
         # Used to print an error during thread and log it
