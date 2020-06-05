@@ -88,7 +88,7 @@ certifi==2018.11.29
 cffi==1.11.5
 chardet==3.0.4
 cryptography==2.4.2
-django==2.1.6
+django==2.2.13
 django-cors-headers==2.4.0
 django-recurrence==1.8.2
 djangorestframework==3.8.2
