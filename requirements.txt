@@ -91,7 +91,7 @@ cryptography==2.4.2
 django==2.1.6
 django-cors-headers==2.4.0
 django-recurrence==1.8.2
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 google==2.0.1
 google-api-python-client==1.7.7
 google-auth==1.6.2
